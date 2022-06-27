@@ -354,3 +354,39 @@
     text-decoration-line: underline;
     color: #0d606f;
 }
+
+.footer {
+    height: 61px;
+    width: 100%;
+    padding-right: 120px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.footer-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 328px;
+}
+
+.footer-text {
+    font-family: "Red Hat Text", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+    color: #ffffff;
+}
+
+.social-networks {
+    display: flex;
+    gap: 20px;
+}
+
+.social-network-ico:hover {
+    fill: #f2785c;
+    stroke: #f2785c;
+    transition: 0.3s;
+}
