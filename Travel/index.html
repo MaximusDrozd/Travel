@@ -9,6 +9,44 @@
   </head>
   <body>
     <div class="container">
+      <div class="popup-container closed">
+        <div class="popup">
+          <p class="popup-title">Log in to your account</p>
+          <button class="button-popup button-popup-colored">
+            <img class="button-ico" src="./assets/logo fb.png" alt="logo fb" />
+            <p class="button-text">Sign In with Facebook</p>
+          </button>
+          <button class="button-popup">
+            <img src="./assets/logo google.png" alt="logo google" />
+            <p class="button-text">Sign In with Google</p>
+          </button>
+          <div class="divider">
+            <img class="line" src="./assets/line.svg" alt="line" />
+            <span class="divider-text">or</span>
+            <img class="line" src="./assets/line.svg" alt="line" />
+          </div>
+          <div class="inputs-wrapper">
+            <label class="label">
+              E-mail
+              <input class="input-login" type="text" />
+            </label>
+            <label class="label">
+              Password
+              <input class="input-login" type="text" />
+            </label>
+          </div>
+          <button class="button-popup button-dark">
+            <p class="button-text">Sign In</p>
+          </button>
+          <button class="story-link link-small">Forgot Your Password?</button>
+          <img class="line line-big" src="./assets/linebig.svg" alt="line" />
+
+          <div class="registration-block">
+            <p class="registration-text">Don’t have an account?</p>
+            <button class="story-link link-small">Register</button>
+          </div>
+        </div>
+      </div>
       <div class="wrapper">
         <header class="header">
           <a href="#" class="link logo-wrapper">
@@ -23,7 +61,7 @@
             <a href="#destinations" class="link nav-item">Destinations</a>
             <a href="#travel_stories" class="link nav-item">Travel Stories</a>
           </nav>
-          <button class="button">Login</button>
+          <button class="button" id="login">Login</button>
         </header>
         <div class="search-wrapper">
           <a name="how_it_works"></a>
@@ -267,5 +305,6 @@
         </footer>
       </div>
     </div>
+    <script src="index.js"></script>
   </body>
 </html>
