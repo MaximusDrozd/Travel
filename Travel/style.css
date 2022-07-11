@@ -218,18 +218,21 @@
     border-radius: 16px;
 }
 
+.slider {
+    width: 1440px;
+    height: 800px;
+    margin-top: 46px;
+    position: relative;
+    overflow: hidden;
+}
+
 .slider-container {
     display: flex;
     align-items: center;
+    position: absolute;
+    left: -540px;
     gap: 60px;
-}
-
-.slider {
-    width: 1440px;
-    margin-top: 46px;
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
+    transition: 0.5s;
 }
 
 .item-text {
@@ -247,6 +250,7 @@
 .slider-item {
     position: relative;
     height: 810px;
+    cursor: pointer;
 }
 
 .circle {
@@ -254,12 +258,6 @@
     height: 20px;
     border-radius: 50%;
     background: rgba(242, 120, 92, 0.5);
-    cursor: pointer;
-}
-
-.circle:hover {
-    background: rgba(104, 21, 2, 0.925);
-    transition: 0.3s;
 }
 
 .switcher {
@@ -267,10 +265,6 @@
     margin-top: 24px;
     margin-bottom: 40px;
     gap: 10px;
-}
-
-.major {
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .active {
@@ -419,6 +413,10 @@
     box-sizing: border-box;
 }
 
+.popup-small {
+    height: 436px;
+}
+
 .popup-title {
     font-family: "Aleo";
     font-style: normal;
@@ -536,7 +534,6 @@
 .link-small {
     font-size: 15px;
     line-height: 18px;
-
 }
 
 .line-big {
