@@ -10,7 +10,7 @@
   <body>
     <div class="container">
       <div class="popup-container closed">
-        <div class="popup">
+        <div class="popup" id="popupLogin">
           <p class="popup-title">Log in to your account</p>
           <button class="button-popup button-popup-colored">
             <img class="button-ico" src="./assets/logo fb.png" alt="logo fb" />
@@ -28,14 +28,14 @@
           <div class="inputs-wrapper">
             <label class="label">
               E-mail
-              <input class="input-login" type="text" />
+              <input class="input-login" type="text" id="eMailInput" />
             </label>
             <label class="label">
               Password
-              <input class="input-login" type="text" />
+              <input class="input-login" type="text" id="passwordInput" />
             </label>
           </div>
-          <button class="button-popup button-dark">
+          <button class="button-popup button-dark" id="signIn">
             <p class="button-text">Sign In</p>
           </button>
           <button class="story-link link-small">Forgot Your Password?</button>
@@ -43,7 +43,32 @@
 
           <div class="registration-block">
             <p class="registration-text">Don’t have an account?</p>
-            <button class="story-link link-small">Register</button>
+            <button class="story-link link-small" id="register">
+              Register
+            </button>
+          </div>
+        </div>
+        <div class="popup popup-small closed" id="popupSignUp">
+          <p class="popup-title">Create account</p>
+          <div class="inputs-wrapper">
+            <label class="label">
+              E-mail
+              <input class="input-login" type="text" id="" />
+            </label>
+            <label class="label">
+              Password
+              <input class="input-login" type="text" id="" />
+            </label>
+          </div>
+          <button class="button-popup button-dark" id="">
+            <p class="button-text">Sign Up</p>
+          </button>
+          <img class="line line-big" src="./assets/linebig.svg" alt="line" />
+          <div class="registration-block">
+            <p class="registration-text">Already have an account?</p>
+            <button class="story-link link-small" id="loginSignUp">
+              Log in
+            </button>
           </div>
         </div>
       </div>
@@ -103,15 +128,15 @@
         <h2 class="headline">POPULAR DESTINATIONS</h2>
         <div class="slider">
           <div class="slider-container">
-            <div class="slider-item">
+            <div class="slider-item" id="sliderItemLeft">
               <img class="item-img" src="./assets/spain.png" alt="spain" />
               <span class="item-text">SPAIN</span>
             </div>
-            <div class="slider-item major">
+            <div class="slider-item" id="sliderItemCenter">
               <img class="item-img" src="./assets/japan.png" alt="japan" />
               <span class="item-text">JAPAN</span>
             </div>
-            <div class="slider-item">
+            <div class="slider-item" id="sliderItemRight">
               <img class="item-img" src="./assets/usa.png" alt="usa" />
               <span class="item-text">USA</span>
             </div>
