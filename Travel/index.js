@@ -12,6 +12,133 @@ const sliderItemCenter = document.querySelector("#sliderItemCenter");
 const sliderItemRight = document.querySelector("#sliderItemRight");
 const slider = document.querySelector(".slider-container");
 const circles = document.getElementsByClassName("circle");
+const burgerButton = document.querySelector(".burger");
+const burgerContainer = document.querySelector(".burger-container");
+const burgerWrapper = document.querySelector(".burger-wrapper");
+const crossButton = document.querySelector(".cross");
+const burgerMenu = document.querySelector(".burger-menu");
+
+const sliderArrows = document.getElementsByClassName("slider-arrow");
+const sliderArrowRight = sliderArrows[1];
+const sliderArrowLeft = sliderArrows[0];
+
+document.addEventListener("DOMContentLoaded", () => {
+  const screenWidth = window.screen.width;
+
+  if (screenWidth <= 1000) {
+    sliderArrowRight.classList.add("arrow-active");
+    circles[0].classList.add("active");
+
+    //for Mobile
+    sliderArrowRight.addEventListener("click", () => {
+      const sliderPosition = slider.style.left;
+      const sliderItemWidth = sliderItemCenter.clientWidth;
+      console.log(sliderItemWidth);
+      const newPosition = +sliderPosition.replace("px", "") - sliderItemWidth;
+
+      slider.style.left = `${newPosition}px`;
+
+      if (sliderPosition === `-${sliderItemWidth}px`) {
+        sliderArrowRight.classList.remove("arrow-active");
+
+        circles[2].classList.add("active");
+        circles[1].classList.remove("active");
+      } else {
+        circles[1].classList.add("active");
+        circles[0].classList.remove("active");
+      }
+
+      if (!sliderArrowLeft.classList.contains("arrow-active")) {
+        sliderArrowLeft.classList.add("arrow-active");
+      }
+    });
+
+    sliderArrowLeft.addEventListener("click", () => {
+      const sliderPosition = slider.style.left;
+      const sliderItemWidth = sliderItemCenter.clientWidth;
+
+      const newPosition = +sliderPosition.replace("px", "") + sliderItemWidth;
+
+      slider.style.left = `${newPosition}px`;
+
+      if (sliderPosition === `-${sliderItemWidth}px`) {
+        sliderArrowLeft.classList.remove("arrow-active");
+
+        circles[0].classList.add("active");
+        circles[1].classList.remove("active");
+      } else {
+        circles[1].classList.add("active");
+        circles[2].classList.remove("active");
+      }
+
+      if (!sliderArrowRight.classList.contains("arrow-active")) {
+        sliderArrowRight.classList.add("arrow-active");
+      }
+    });
+  } else {
+    circles[1].classList.add("active");
+
+    const newPosition = 800 - (screenWidth - 800 - 60 * 2) / 2;
+    slider.style.left = `-${newPosition}px`;
+
+    //for desktop
+    sliderItemRight.addEventListener("click", () => {
+      const screenWidth = window.screen.width;
+      const newPosition = 800 * 3 + 120 - screenWidth;
+
+      slider.style.left = `-${newPosition}px`;
+      circles[2].classList.add("active");
+      circles[1].classList.remove("active");
+    });
+
+    sliderItemCenter.addEventListener("click", () => {
+      const screenWidth = window.screen.width;
+      const newPosition = 800 - (screenWidth - 800 - 60 * 2) / 2;
+
+      slider.style.left = `-${newPosition}px`;
+      const activeCircle = document.querySelector(".active");
+      activeCircle.classList.remove("active");
+      circles[1].classList.add("active");
+    });
+
+    sliderItemLeft.addEventListener("click", () => {
+      slider.style.left = 0;
+      circles[0].classList.add("active");
+      circles[1].classList.remove("active");
+    });
+  }
+});
+
+const hideMenu = () => {
+  burgerContainer.classList.add("hidden");
+  setTimeout(() => {
+    burgerContainer.classList.add("closed");
+  }, 70);
+};
+
+const showMenu = () => {
+  burgerContainer.classList.remove("closed");
+  setTimeout(() => {
+    burgerContainer.classList.remove("hidden");
+  }, 70);
+};
+burgerMenu.addEventListener("click", () => {
+  hideMenu();
+});
+
+crossButton.addEventListener("click", () => {
+  hideMenu();
+});
+
+burgerButton.addEventListener("click", () => {
+  showMenu();
+});
+
+burgerContainer.addEventListener("click", (event) => {
+  if (event.target !== burgerWrapper) {
+    hideMenu();
+  }
+});
 
 loginButton.addEventListener("click", () => {
   popupContainer.classList.remove("closed");
@@ -35,23 +162,4 @@ registerButton.addEventListener("click", () => {
 loginSignUpButton.addEventListener("click", () => {
   popupLogin.classList.remove("closed");
   popupSignUp.classList.add("closed");
-});
-
-sliderItemRight.addEventListener("click", () => {
-  slider.style.left = "-1080px";
-  circles[2].classList.add("active");
-  circles[1].classList.remove("active");
-});
-
-sliderItemCenter.addEventListener("click", () => {
-  slider.style.left = "-540px";
-  const activeCircle = document.querySelector(".active");
-  activeCircle.classList.remove("active");
-  circles[1].classList.add("active");
-});
-
-sliderItemLeft.addEventListener("click", () => {
-  slider.style.left = 0;
-  circles[0].classList.add("active");
-  circles[1].classList.remove("active");
 });
