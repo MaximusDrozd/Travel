@@ -11,6 +11,7 @@ const sliderItemLeft = document.querySelector("#sliderItemLeft");
 const sliderItemCenter = document.querySelector("#sliderItemCenter");
 const sliderItemRight = document.querySelector("#sliderItemRight");
 const slider = document.querySelector(".slider-container");
+const sliderBlock = document.querySelector(".slider");
 const circles = document.getElementsByClassName("circle");
 const burgerButton = document.querySelector(".burger");
 const burgerContainer = document.querySelector(".burger-container");
@@ -78,13 +79,14 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     circles[1].classList.add("active");
 
-    const newPosition = 800 - (screenWidth - 800 - 60 * 2) / 2;
+    const sliderWidth = sliderBlock.clientWidth;
+
+    const newPosition = 800 - (sliderWidth - 800 - 60 * 2) / 2;
     slider.style.left = `-${newPosition}px`;
 
     //for desktop
     sliderItemRight.addEventListener("click", () => {
-      const screenWidth = window.screen.width;
-      const newPosition = 800 * 3 + 120 - screenWidth;
+      const newPosition = 800 * 3 + 120 - sliderWidth;
 
       slider.style.left = `-${newPosition}px`;
       circles[2].classList.add("active");
@@ -92,8 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     sliderItemCenter.addEventListener("click", () => {
-      const screenWidth = window.screen.width;
-      const newPosition = 800 - (screenWidth - 800 - 60 * 2) / 2;
+      const newPosition = 800 - (sliderWidth - 800 - 60 * 2) / 2;
 
       slider.style.left = `-${newPosition}px`;
       const activeCircle = document.querySelector(".active");

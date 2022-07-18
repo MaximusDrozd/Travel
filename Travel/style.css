@@ -653,6 +653,7 @@
 
     .image-wrapper {
         width: 100%;
+        height: calc(100% + 49px);
     }
     .story-description {
         overflow: hidden;
@@ -991,7 +992,6 @@
         background: url(./assets/boat.png);
         max-width: 900px;
         width: 100%;
-        height: calc(695px + 49px);
         background-position: 0 49px;
         background-repeat: no-repeat;
     }
@@ -1251,7 +1251,6 @@
         background: url(./assets/boat.png);
         max-width: 680px;
         width: 100%;
-        height: calc(695px + 49px);
         background-position: 0 49px;
         background-repeat: no-repeat;
     }
@@ -1562,7 +1561,6 @@
         background: url(./assets/boat_mobile.png);
         max-width: 390px;
         width: 100%;
-        height: calc(693px + 29px);
         background-position: 0 29px;
         background-repeat: no-repeat;
     }
